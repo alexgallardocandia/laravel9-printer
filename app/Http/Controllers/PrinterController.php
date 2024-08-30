@@ -63,7 +63,7 @@ class PrinterController extends Controller
         $printer->text($this->addSpaces('Cant.', 8) . $this->addSpaces('Descripcion', 18) . $this->addSpaces('P.Unit', 10) . $this->addSpaces('Total', 10) . "\n");
         $printer->text($this->lines(47));
         $printer->setEmphasis(false);
-        foreach ($request->venta['venta_inventarios'] as $item) {
+        foreach ($request->venta['venta_inventario'] as $item) {
             $cant = number_format(floatval($item['inventario']['cantidad']), 2);
             $cant = str_split($cant, 8);
             foreach ($cant as $k => $l) {
